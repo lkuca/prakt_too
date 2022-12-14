@@ -1,69 +1,108 @@
 from math import *
 from random import *
-print("puu l‰bimııdu arvutamine")
-#kirjuta programm, mis k¸sib kasutaja k‰est puu ¸mbermııdu ning teatav selle peale puu l‰bimııt
-c=float(input("anna ¸mbermııt: "))
-d=round(c/pi,2)
-print(f"puu l‰bimııt= {d}")
+print("puu l√§bim√µ√µdu arvutamine")
+#kirjuta programm, mis k√ºsib kasutaja k√§est puu √ºmberm√µ√µdu ning teatav selle peale puu l√§bim√µ√µt
+try:
+    c=float(input("anna √ºmberm√µ√µt: "))
+    if c>0:
+        d=round(c/pi,2)
+        print(f"puu l√§bim√µ√µt= {d}")
+    else:
+        print("c peab olema suurem kuo 0")
+except:
+    print("andmet√ºpp on vale")
 
 
 
-#2.Arvutage Pythoni k‰sureal, kui pikk on ristk¸likukujulise maat¸ki diagonaal, mille mııtmed on Nm x Mm. N ja M k¸si kasutajalt.
-
-print("v‰ljenda diagonaali pikkus")
-N=float(input("Sisesta N:"))
-M=float(input("Sisesta M:"))
-d=round(sqrt(N**2+M**2),2)
-print(f"Ristk¸likukujulise maat¸ki diagonaal on {d}")
-
-#3Leidke j‰rgnevast n‰iteprogrammist semantiline viga:
-
-aeg = float(input("Mitu tundi kulus sıiduks? "))
-teepikkus = float(input("Mitu kilomeetrit sıitsid? "))
-kiirus = teepikkus/aeg
+#2.Arvutage Pythoni k√§sureal, kui pikk on ristk√ºlikukujulise maat√ºki diagonaal, mille m√µ√µtmed on Nm x Mm. N ja M k√ºsi kasutajalt.
+try:
+    print("v√§ljenda diagonaali pikkus")
+    N=float(input("Sisesta N:"))
+    M=float(input("Sisesta M:"))
+    if M>0 and N>0:
+        d=round(sqrt(N**2+M**2),2)
+        print(f"Ristk√ºlikukujulise maat√ºki diagonaal on {d}")
+    else:
+        print("vajab et oleks suurem kui 0")
+except:
+    print("andmete t√ºpp on vale")
+#3Leidke j√§rgnevast n√§iteprogrammist semantiline viga:
+try:
+    aeg = float(input("Mitu tundi kulus s√µiduks? "))
+    teepikkus = float(input("Mitu kilomeetrit s√µitsid? "))
+    kiirus = teepikkus/aeg
+    if teepikkus<0 and kiirus<0 and aeg>0:
+        print("vaja kirjutada number alles 1")
+    else:
+        print("peab olema number, mitte t√§ht")
+except:
+    print("andmete t√ºpp on vale")
 print("Sinu kiirus oli " + str(kiirus) + " km/h")
-#4Koostada programm, mis arvutab aritmeetilise keskmise suvalisest etteantud 5 t‰is arvust.
-
+#4Koostada programm, mis arvutab aritmeetilise keskmise suvalisest etteantud 5 t√§is arvust.
 print("Aritmeetiline keskmine")
-A1=int(input("Esimene arv:"))
-A2=int(input("Teine arv"))
-A3=int(input("Kolmas arv"))
-A4=int(input("Neljas arv"))
-A5=int(input("Viies arv"))
-K=(A1+A2+A3+A4+A5)/5
-print(f"kesknime on {K}")
+try:
+    A1=int(input("Esimene arv:"))
+    A2=int(input("Teine arv"))
+    A3=int(input("Kolmas arv"))
+    A4=int(input("Neljas arv"))
+    A5=int(input("Viies arv"))
+    if A1>0 and A2>0 and A3>0 and A4>0 and A5>0:
+        K=(A1+A2+A3+A4+A5)/5
+        print(f"kesknime on {K}")
+except:
+    print("andmet√º√ºp on vale")
 #5
 print("   @..@   ")
 print("  (----)  ")
 print(" ( \__/ ) ")
 print(" ^^ "" ^^ ")
-#6 Arvutame kolmnurga ¸mbermııdu. Loo kolm t‰isarvulist muutujat a, b, c. Loo valem, mis arvutab kolmnurga ¸mbermııdu (P=a+b+c)
+#6 Arvutame kolmnurga √ºmberm√µ√µdu. Loo kolm t√§isarvulist muutujat a, b, c. Loo valem, mis arvutab kolmnurga √ºmberm√µ√µdu (P=a+b+c)
 a=randint(0,100)
 b=randint(0,100)
 c=randint(0,100)
 print(f"a={a}\n,b={b}\n,c={c}")
 P=a+b+c
-print(F"‹mbermııt on {P}")
+print(F"√úmberm√µ√µt on {P}")
 #7 Pitsa
 P=randint(1.6)
-print("Iga¸ks maksab {summa}")
-#8 K¸tusekulu arvutamineKasutaja sisestab tangitud k¸tuse liitrid Kasutaja sisestab l‰bitud kilomeetrid Programm leiab k¸tusekulu 100km kohta keskmiselt
-print("k¸tusekaalu arvutamine")
-l=float(input("K¸tuse liitride kogus:"))
+print("Iga√ºks maksab {summa}")
+#8 K√ºtusekulu arvutamineKasutaja sisestab tangitud k√ºtuse liitrid Kasutaja sisestab l√§bitud kilomeetrid Programm leiab k√ºtusekulu 100km kohta keskmiselt
+print("k√ºtusekaalu arvutamine")
+l=float(input("K√ºtuse liitride kogus:"))
 km=float(input("Labitud kilomeetrid: "))
 kulu=(l/km)*100
-print(f"k¸tusekulu {kulu}")
-#9 Rulluisutajad Rulluisutaja keskmine kiirus on 29,9km/h Kui kaugele jıuab M minutiga
+print(f"k√ºtusekulu {kulu}")
+#9 Rulluisutajad Rulluisutaja keskmine kiirus on 29,9km/h Kui kaugele j√µuab M minutiga
 print("Rulluisutajad")
 M=int(input("Minutid:"))
 M=M/60
 tee=M*29.9
-print(f"jıuab {tee} km")
+print(f"j√µuab {tee} km")
 #10 Ajateisendus
 print("Sisenda aja minutis:")
 M=int(input("Sisenda aja minutis:")) #1h=60min
 H=M//60 #h
 M=M%60 #min
 print(f"{H}:{M}")
+
+
+
+# ema robot
+print("ema robot")
+a=input("sisesta:")
+print(a.isdigit(), a.isalpha())
+if a.isdigit() and int(a)>0 and int(a)<5:
+    a=int(a)
+    if a==5:
+        pass
+    elif a==4:
+        pass
+    elif a==3:
+        pass
+    elif a==2 or a==1:
+        pass
+
+else:
+    print("sa valesti vastas")
 
 
